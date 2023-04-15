@@ -9,7 +9,6 @@ import views
 
 app = Flask(__name__)
 db = create_engine(os.environ['DB_SIGNEDIN_URI'])
-base = declarative_base()
 
 
 app.add_url_rule('/', view_func=views.start)

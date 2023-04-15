@@ -1,21 +1,13 @@
 import os
 
 from sqlalchemy import create_engine
-from sqlalchemy import Column, String, Integer
-from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-db_string = os.environ['DB_SIGNEDIN_URI']
+import db.base as base
+import db.models.user
 
-db = create_engine(db_string)
-base = declarative_base()
+engine = create_engine(os.environ['DB_SIGNEDIN_URI'])
+base.Base.metadata.create_all(engine)
 
-from models.user import User
-
-Session = sessionmaker(db)
-session = Session()
-
-base.metadata.create_all(db)
-
-
-
+#Session = sessionmaker(engine)
+#session = Session()
