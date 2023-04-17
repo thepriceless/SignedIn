@@ -9,5 +9,5 @@ class Logstats(Base):
 
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('user.id'))
-    user = relationship('User', back_populates='username')
+    user = relationship('User', back_populates='logstats')
     last_seen = Column(TIMESTAMP, server_default=func.now(), onupdate=func.current_timestamp())

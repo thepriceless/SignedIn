@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<Title>Sign up</Title>
+{% endblock %}
+
+{% block body %}
+<h2>Fill in the registration form</h2><br>
+<div class="signup-form">
+    <form action="/registration/" method="POST">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <label for="rptd-password">Repeat password:</label><br>
+        <input type="password" id="rptd-password" name="rptd-password"><br>
+        <input type="submit" value="Sign up">
+    </form>
+</div>
+{% endblock %}
